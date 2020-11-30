@@ -1,3 +1,4 @@
+//this is classwork 30.11.2020 made by Temur and Vladimir
 #include<iostream>
 #include <windows.h>
 using namespace std;
