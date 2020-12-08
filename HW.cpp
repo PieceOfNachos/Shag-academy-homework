@@ -1,41 +1,22 @@
-﻿#include <iostream>
+﻿//çàäàíèå 6 çà 03.12.2020
+#include <iostream>
+#include <string>
 using namespace std;
 int main()
 {
-    
-    int password;
-    int affordableAmount = 0;
-    int retry;
-    cout << "Write new password: " << endl;
-    cout << "WARNING!\n Dont write password like 000000 or 100000\n write only that password, where will be 6 numbers" << endl;
-    cin>>password;
-    cout << password % 5 << endl;
-    if (password % 5 > 0 && password % 5 < 10) {
+    int password;//Ïåðåìåííàÿ äëÿ ïàðîëÿ
+    string login;//Ïåðåìåííàÿ äëÿ ëîãèíà 
 
-        cout << "Write password again: " << endl;
-        cin >> retry;
-        if (password == retry) {
-           cout << "Hello!" << endl;
-        }
-        else {
-            cout << "It isnt" << endl;
-            while (affordableAmount < 3) {
-                cin >> retry;
-                if (retry == password) {
-                    cout << "that one is right" << endl;
-                    break;
-                }
-                else {
-                    affordableAmount++;
-                }
+    cout << "Hello again." << endl;
+    cout << "Enter your login: ";
+    cin >> login;
+    cout << "Now,enter your password:";
+    cin >> password;
+    if (password < 100000 || password>999999)//íåïðàâèëüíî âåä¸ííûé ïàðîëü
+        cout << "Password isn't correct. Forgot your password? We can send a message to your mail for reset the password." << endl;
+    else
+        cout << "Welcome back " << login << "." << endl;//ïàðîëü ââåä¸í ïðàâèëüíî
 
-            
-            }
-        }
 
-    }
-    else if(password%100000 < 0 || password%100000>10) {
-        cout << "invalid syntax" << endl;
-    }
     return 0;
 }
