@@ -1,98 +1,107 @@
 #include <iostream>
-#include <windows.h>
-using namespace std;
-void add(const*char message) {
-	cout << message << endl;
-}
-int main() {
-	int strength = 2;
-	int agility = 2;
-	int intellect = 10;
-	int charisma = 5;
-	int luckness = 5;
-	int stopCicle = 0;
-	int whatToAdd;
-	int playerChoise; // choise what player will do to get discount
-	cout << "You found a magic cave. \nThere is legendary warrior. \nYou can buy there the ultimate stuff!" << endl;
-	Sleep(2000);
-	cout << "You can try to get some discount." << endl;
-	Sleep(2000);
-	cout<<"Strength: "<<strength<<"\n Agility: " << agility << "\n Intellect: " << intellect << "\n Charisma: " << charisma << "\n Luckness: " << luckness
-	/*this code is adding points to your abilities */
-	while (stopCicle != 1) {
-		add("Answer to this question\n 1+0 \n to get more strength");
-		if (whatToDo == 1) {
-			strength++;
-		}
-		add("Answer to this question\n 2-0 \n to get more agility");
-			if (whatToDo == 2) {
-				agility++;
-			}
-		add("Answer to this question\n 2+1 \n to get more intellect");
-			if (whatToDo == 3) {
-				intellect++;
-			}
-		add("Answer to this question\n 2+2 \n to get more charisma");
-			if (whatToDo == 4) {
-				charisma++;
-			}
-		add("Answer to this question\n 2+3 \n to get more luckness");
-			if (whatToDo == 5) {
-				luckness++;
-			}
-		cin >> whatToDo;
-		add("if you want to stop adding write 1\n if you want to continue adding write 0");
-		cin >> stopCicle;
-	}
 
-	cout << "Choose what you will do." << endl;
-	Sleep(2000);
-	cout << "1 - try to bluff him" << endl;
-	Sleep(1000);
-	cout << "2 - flattery" << endl;
-	Sleep(1000);
-	cout << "3 - conviction" << endl;
-	Sleep(1000);
-	cout << "4 - trick him" << endl;
-	cin >> playerChoise;
-	switch (playerChoise)
-	{
+/*Ситуация: Герой встречается с npc-персонажем. Между ними начинается диалог. Используя
+конструкцию switch - case дайте игроку возможность выбора между несколькими возможными
+фразами и обозначьте в каждому случае реакцию npc*/
+
+/* Дополнительное задание: подумайте, какие величины в игре могут влиять на
+диалог (слава героя, его харизма, пройденный главный сюжет, членство в гильдиях и т.д.)
+Дополните диалог, добавив различные варианты для различных значений выбранных величин*/
+
+int main() {
+	int charisma, trueOrFakeNews;
+	int behavior;
+	bool badPast;
+	int ageInJail = 0;
+	int beg = 0;
+	int relation; //отношение Олдрика к герою
+	int answ; //ответ Героя
+	setlocale(0, "ru");
+	std::cout << "Приветствую, Странник" << std::endl;
+
+	std::cout << std::endl << "Choise your abbilities:\nCharisma: " << std::endl;
+	std::cin >> charisma;
+	std::cout << std::endl << "Behavior: " << std::endl;
+	std::cin >> behavior;
+	std::cout << std::endl << "Your Past: " << std::endl;
+	std::cin >> badPast;
+	std::cout << std::endl << "Relation: " << std::endl;
+	std::cin >> relation;
+
+
+
+	std::cout << std::endl << "1.- Давай торговать!" << std::endl;
+	std::cout << "2.- Я вырезал твою родную деревню!" << std::endl;
+	std::cout << "3.- Слухи!" << std::endl;
+	std::cout << "4.- Нет, ничего не надо, до свидания!" << std::endl;
+
+
+	std::cout << std::endl << "Выберите вариант ответа:" << std::endl;
+	std::cin >> answ;
+	switch (answ) {
 	case 1:
-		if (strength >= 5 && charisma >= 5) {
-			cout << "You bluffed him for granted, but you was in jail for 20 years :(" << endl;
+		if (charisma > 5 && behavior > 5 && badPast != true && relation > 5) {
+			std::cout << "I will trade with you knight, if you need smth i can give you some discount" << std::endl;
+			relation++;
+		}
+		else if (charisma < 0 && behavior < 0 && badPast == true && relation < 0) {
+			std::cout << "i won't talk with you, go away!" << std::endl;
+			relation--;
 		}
 		else {
-			cout << "You didnt bluff and was tricked" << endl;
+			std::cout << "I will trade with you!" << std::endl;
 		}
 		break;
+
 	case 2:
-		if (luckness >= 5 && charisma >= 5 && intellect >= 6) {
-			cout << "You flattered him for 20% discount" << endl;
+		if (charisma > 5 && behavior > 5 && badPast != true && relation > 5) {
+			std::cout << "i won't talk with you, HEY POLICE THERE IS MAN WHO IS GAY" << std::endl;
+			relation--;
+			ageInJail = ageInJail + 1;
+		}
+		else if (charisma < 0 && behavior < 0 && badPast == true && relation < 0) {
+			std::cout << "i will kill you!" << std::endl;
+			relation--;
 		}
 		else {
-			cout << "You didnt flatter" << endl;
+			std::cout << "i won't talk with you, i wanna to kill you but i wont!" << std::endl;
+			relation--;
 		}
 		break;
 	case 3:
-		if (agility >= 7 && charisma >= 5 && intellect >= 6) {
-			cout << "You convictioned him for 50% discount" << endl;
+		if (charisma > 5 && behavior > 5 && badPast != true && relation > 5) {
+			std::cout << "I understood you, thank for this news!" << std::endl;
+			relation++;
+
+		}
+		else if (charisma < 0 && behavior < 0 && badPast == true && relation < 0) {
+			std::cout << "I dont trust you!" << std::endl;
+			relation--;
 		}
 		else {
-			cout << "You didnt conviction" << endl;
+			std::cin >> trueOrFakeNews;
+			std::cout << "Thank you for advise, but let me check that info!" << std::endl;
+			if (trueOrFakeNews == 1) {
+				relation++;
+			}
+			else {
+				relation--;
+			}
+
+
 		}
 		break;
-	case 4:
-		if (strength >= 5 && agility >= 10 && intellect >= 8) {
-			cout << "You tricked him for granted" << endl;
+	default:
+		std::cout << "Ok, we will meet each other in a future" << std::endl;
+	}
+	if (ageInJail != 0) {
+		std::cin >> beg;
+		if (beg > 0) {
+			std::cout << "You can be free" << std::endl;
 		}
-		else {
-			cout << "You didnt tricked and arrived to jail" << endl;
-		}
-		break;
 	}
 
-
-	
+	/*Здесь Ваш код :))*/
 
 	return 0;
 }
