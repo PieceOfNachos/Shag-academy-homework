@@ -8,9 +8,9 @@ int main(){
 	
 	while(Stop != 0){
 	std::cin>>cell;
-	if(cell > 0) std::cout<<"Ïğûãàåì"<<std::endl;
-	else if (cell < 0) std::cout<<"ñïóñê"<<std::endl;
-	else std::cout<<"Äâèãàåìñÿ äàëüøå"<<std::endl; 
+	if(cell > 0) std::cout<<"ÃÃ°Ã»Ã£Ã Ã¥Ã¬"<<std::endl;
+	else if (cell < 0) std::cout<<"Ã±Ã¯Ã³Ã±Ãª"<<std::endl;
+	else std::cout<<"Ã„Ã¢Ã¨Ã£Ã Ã¥Ã¬Ã±Ã¿ Ã¤Ã Ã«Ã¼Ã¸Ã¥"<<std::endl; 
 		if(i>10){
 		Stop--;
 		std::cout<<"You won"<<std::endl;
