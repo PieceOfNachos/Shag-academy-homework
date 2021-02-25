@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+class creatures {
+public:
+	void walk();
+	void run();
+	void set_spawn(int x);
+	int get_spawn();
+private:
+	int spawn;
+};
+class human : public creatures {
+public:
+	void dialogue();
+
+};
+void creatures::set_spawn(int x) {
+	this->spawn = x;
+
+}
+int creatures::get_spawn() {
+	return this->spawn;
+}
+void human::dialogue() {
+	cout << "Hello" << endl;
+}
+int main(){ 
+	creatures rabbit;
+	rabbit.set_spawn(5);
+	cout << rabbit.get_spawn() << endl;
+	
+	human andrew;
+	andrew.set_spawn(10);
+	cout << andrew.get_spawn() << endl;
+	andrew.dialogue();
+
+	
+
+
+}
