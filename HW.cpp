@@ -1,22 +1,28 @@
-﻿//çàäàíèå 6 çà 03.12.2020
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 using namespace std;
-int main()
-{
-    int password;//Ïåðåìåííàÿ äëÿ ïàðîëÿ
-    string login;//Ïåðåìåííàÿ äëÿ ëîãèíà 
+/*
+void foo(string* p) {
+	
+	cout << *p << endl;
 
-    cout << "Hello again." << endl;
-    cout << "Enter your login: ";
-    cin >> login;
-    cout << "Now,enter your password:";
-    cin >> password;
-    if (password < 100000 || password>999999)//íåïðàâèëüíî âåä¸ííûé ïàðîëü
-        cout << "Password isn't correct. Forgot your password? We can send a message to your mail for reset the password." << endl;
-    else
-        cout << "Welcome back " << login << "." << endl;//ïàðîëü ââåä¸í ïðàâèëüíî
+	string temp = "Dungeon Master";
+	p = &temp;
+	cout << *p << endl;
+}
+int main() {
+	string b = "Hello World!";
+	string* p = new string(b);
+	foo(p);
+	string temp1 = "Bondage";
+	p = &temp1;
+	cout << *p << endl;
+	delete p;
 
 
-    return 0;
+
+}*/
+
+int main() {
+	int* p;
 }
