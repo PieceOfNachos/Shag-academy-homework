@@ -11,7 +11,6 @@ void iffer(int *p) {
 	}
 }
 int main() {
-	int temp = 0;
 	int* p = new int;
 	cin >> *p;
 	iffer(p);
