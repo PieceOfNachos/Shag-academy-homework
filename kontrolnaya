@@ -1,0 +1,29 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+int main() {
+    int a;
+    int* massiv = new int[10];
+    srand(time(0));
+    for (int i=0; i < 10; i++) {
+        massiv[i] = rand() % 100 + 1;
+    }
+    for (int i = 0; i < 10; i++) {
+        cout << massiv[i]<<endl;
+    }
+    for (int i = 0; i < 9; i++)
+        for (int i = 0; i < 9; i++) {
+            if (massiv[i] < massiv[i + 1]) {
+            }
+            else {
+
+                a = massiv[i + 1];
+                massiv[i + 1] = massiv[i];
+                massiv[i] = a;
+
+
+            }
+        }
+    cout << massiv[0] <<" "<< massiv[9] << endl;
+}
